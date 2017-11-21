@@ -1,0 +1,204 @@
+<html>
+    <head>
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Pacifico|Cookie|Courgette|Great+Vibes|Kaushan+Script|Yellowtail" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>    
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </head>     
+    <body>
+        <div id="header">
+            <h1 class="text-center">Student Details Portal</h1>
+            <p class="text-right">Student details management made easy...</p>
+        </div>
+        <div id="content">
+            <div class="row">
+            <div class="col-sm-4 category"  style="border-right:solid 1px;">
+                <ul class="nav nav-stacked">
+                    <li class="panel hover" onclick="show(eng)" style="margin-bottom:40px;">Engineering</li>
+                    <li class="panel" style="margin-bottom:40px;" onclick="show(commerce)">Commerce</li>
+                    <li class="panel" onclick="show(archi)" style="margin-bottom:40px;">Architecture</li>
+                    <li class="panel" onclick="display(eng,commerce,archi)" style="margin-bottom:40px;">Show All</li>
+                    <li class="panel" onclick="hideall(eng,commerce,archi)">Hide All</li>
+                </ul>
+            </div>
+            <div class="col-sm-8 students" >
+                <div class="container-fluid">
+                    <div  id="section3">
+                        <p id="select" class="show hide">Select the category</p>
+                     </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="footer">
+            <footer class="text-center">
+                Page Developed by: <a href="https://github.com/puneetamb240" target="_blank">Puneet Jain</a>
+            </footer>
+        </div>
+        <div id="eng" class="hide">
+            <div class="row" style="margin-bottom:10px;">
+                <div class="col-sm-6">
+            <h3 style="display:inline;">ENGINEERING</h3>
+        </div>
+        <div class="col-sm-6">
+        <div class="text-right" style="display:inline;">
+            <button class="btn btn-primary actions" onclick="add(eng)" data-toggle="modal" data-target="#mymodal">Add new record</button>  
+            <button class="btn btn-primary actions" onclick="deleteall(eng)">Delete all records</button>
+        </div>
+        </div>
+        </div>
+            <table class="table table-hover">
+                <thead>
+                    <th>Roll no.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Year</th>
+                    <th></th>
+                </thead>
+                <tbody >
+                    <tr>
+                        <td>1510991477</td>
+                        <td>Puneet Jain</td>
+                        <td>puneetjain.amb@gmail.com</td>
+                        <td>3</td>
+                        <td>
+                            <button class="btn btn-warning" title="edit" onclick="edit(this)" data-toggle="modal" data-target="#mymodal"><i class="fa fa-pencil"></i></button>
+                            <button class="btn btn-warning" title="delete" onclick="deleteR(this)"><i class="fa fa-times"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1510991460</td>
+                        <td>Prince Arora</td>
+                        <td>19princearora95@gmail.com</td>
+                        <td>3</td>
+                        <td>
+                                <button class="btn btn-warning" title="edit" onclick="edit(this)" data-toggle="modal" data-target="#mymodal"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-warning" title="delete" onclick="deleteR(this)"><i class="fa fa-times"></i></button>
+                         </td>
+                    </tr>
+                    <tr>
+                        <td>1510991473</td>
+                        <td>Pulkit Sharma</td>
+                        <td>pulkitaharma1816@gmail.com</td>
+                        <td>3</td>
+                        <td>
+                                <button class="btn btn-warning" title="edit" onclick="edit(this)" data-toggle="modal" data-target="#mymodal"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-warning" title="delete" onclick="deleteR(this)"><i class="fa fa-times"></i></button>
+                         </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div  id="commerce" class="hide">
+                <div class="row" style="margin-bottom:10px;">
+                        <div class="col-sm-6">
+                    <h3 style="display:inline;">COMMERCE</h3>
+                </div>
+                <div class="col-sm-6">
+                <div class="text-right" style="display:inline;">
+                    <button class="btn btn-primary actions" onclick="add(commerce)" data-toggle="modal" data-target="#mymodal">Add new record</button>  
+                    <button class="btn btn-primary actions" onclick="deleteall(commerce)">Delete all records</button>
+                </div>
+                </div>
+                </div>
+            <table class="table table-hover">
+                <thead>
+                    <th>Roll no.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Year</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Com157492</td>
+                        <td>Anshul</td>
+                        <td>anshul123@gmail.com</td>
+                        <td>2</td>
+                        <td>
+                                <button class="btn btn-warning" title="edit" onclick="edit(this)" data-toggle="modal" data-target="#mymodal"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-warning" title="delete" onclick="deleteR(this)"><i class="fa fa-times"></i></button>
+                         </td>
+                    </tr>
+                    <tr>
+                        <td>Com162436</td>
+                        <td>Prachi</td>
+                        <td>prachi96@gmail.com</td>
+                        <td>1</td>
+                        <td>
+                                <button class="btn btn-warning" title="edit" onclick="edit(this)" data-toggle="modal" data-target="#mymodal"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-warning" title="delete" onclick="deleteR(this)"><i class="fa fa-times"></i></button>
+                         </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="archi" class="hide">
+                <div class="row" style="margin-bottom:10px;">
+                        <div class="col-sm-6">
+                    <h3 style="display:inline;">ARCHITECTURE</h3>
+                </div>
+                <div class="col-sm-6">
+                <div class="text-right" style="display:inline;">
+                    <button class="btn btn-primary actions" onclick="add(archi)" data-toggle="modal" data-target="#mymodal">Add new record</button>  
+                    <button class="btn btn-primary actions" onclick="deleteall(archi)">Delete all records</button>
+                </div>
+                </div>
+                </div>
+            <table class="table table-hover">
+                <thead>
+                    <th>Roll no.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Year</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Arch79435</td>
+                        <td>Lakshay</td>
+                        <td>lakshay975@gmail.com</td>
+                        <td>3</td>
+                        <td>
+                                <button class="btn btn-warning" title="edit" onclick="edit(this)" data-toggle="modal" data-target="#mymodal"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-warning" title="delete" onclick="deleteR(this)"><i class="fa fa-times"></i></button>
+                         </td>
+                    </tr>
+                    <tr>
+                        <td>Arch10236</td>
+                        <td>Komal</td>
+                        <td>komalgoyal69@yahoo.com</td>
+                        <td>2</td>
+                        <td>
+                                <button class="btn btn-warning" title="edit" onclick="edit(this)" data-toggle="modal" data-target="#mymodal"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-warning" title="delete" onclick="deleteR(this)"><i class="fa fa-times"></i></button>
+                         </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal fade" id="mymodal" role="dialog" style="color:black;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                        <h1 class="modal-title">Enter Details</h1>
+                    </div>
+                    <div class="modal-body">     
+                    </div>
+                    <div class="modal-footer">
+                        <p style="float: left;display: inline"><b>Note:</b>Marked fields are compulsory.</p>
+                        <button type="button" class="btn btn-default hide"  id="sub">Submit</button>
+                        <button type="button" class="btn btn-default hide" id="save" >Save</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" >Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
